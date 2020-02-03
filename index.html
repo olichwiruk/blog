@@ -8,6 +8,10 @@ layout: default
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
       <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
+      {% if post.photo %}<img src=
+      {% if post.photo contains 'http' %}{{post.photo}}
+      {% else %}{{site.baseurl}}/{{post.photo}}{% endif %}
+      ></img>{% endif %}
 
       <div class="entry">
         {{ post.excerpt }}
