@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hello world!
+tags: test
 ---
 
 Click and see the very first article!
