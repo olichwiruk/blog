@@ -1,7 +1,7 @@
 ---
 layout: tag
-title: "Tag: test"
-tag: test
-lang: 
+title: "Tag: pl"
+tag: pl
+lang: pl
 robots: noindex
 ---

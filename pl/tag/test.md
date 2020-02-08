@@ -2,6 +2,6 @@
 layout: tag
 title: "Tag: test"
 tag: test
-lang: 
+lang: pl
 robots: noindex
 ---

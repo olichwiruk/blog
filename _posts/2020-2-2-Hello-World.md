@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hello world!
+lang: en
 tags: test
 ---
 

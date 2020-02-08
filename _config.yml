@@ -6,7 +6,9 @@
 name: olichwiruk
 
 # Short bio or description (displayed in the header)
-description: FullStack Web Developer from Krakow
+description:
+    en: FullStack Web Developer from Krakow
+    pl: FullStack Web Developer from Krakow
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars.githubusercontent.com/olichwiruk
@@ -53,7 +55,7 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
-permalink: /:title/
+permalink: pretty
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
@@ -84,3 +86,17 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+defaults:
+    -
+     scope:
+         path: ""
+     values:
+         lang: pl
+         base-url: "/pl/"
+    -
+     scope:
+         path: pl
+     values:
+         lang: pl
+         base-url: "/pl/"

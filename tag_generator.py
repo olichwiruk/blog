@@ -13,42 +13,45 @@ No plugins required.
 import glob
 import os
 
-post_dir = '_posts/'
-tag_dir = 'tag/'
+languages = ['', 'pl/']
 
-filenames = glob.glob(post_dir + '*md')
+for lang in languages:
+    post_dir = '{}_posts/'.format(lang)
+    tag_dir = '{}tag/'.format(lang)
 
-total_tags = []
-for filename in filenames:
-    f = open(filename, 'r', encoding='utf8')
-    crawl = False
-    for line in f:
-        if crawl:
-            current_tags = line.strip().split()
-            if current_tags[0] == 'tags:':
-                total_tags.extend(current_tags[1:])
-                crawl = False
-                break
-        if line.strip() == '---':
-            if not crawl:
-                crawl = True
-            else:
-                crawl = False
-                break
-    f.close()
-total_tags = set(total_tags)
+    filenames = glob.glob(post_dir + '*md')
 
-old_tags = glob.glob(tag_dir + '*.md')
-for tag in old_tags:
-    os.remove(tag)
+    total_tags = []
+    for filename in filenames:
+        f = open(filename, 'r', encoding='utf8')
+        crawl = False
+        for line in f:
+            if crawl:
+                current_tags = line.strip().split()
+                if current_tags[0] == 'tags:':
+                    total_tags.extend(current_tags[1:])
+                    crawl = False
+                    break
+            if line.strip() == '---':
+                if not crawl:
+                    crawl = True
+                else:
+                    crawl = False
+                    break
+        f.close()
+    total_tags = set(total_tags)
 
-if not os.path.exists(tag_dir):
-    os.makedirs(tag_dir)
+    old_tags = glob.glob(tag_dir + '*.md')
+    for tag in old_tags:
+        os.remove(tag)
 
-for tag in total_tags:
-    tag_filename = tag_dir + tag + '.md'
-    f = open(tag_filename, 'a')
-    write_str = '---\nlayout: tag\ntitle: \"Tag: ' + tag + '\"\ntag: ' + tag + '\nrobots: noindex\n---\n'
-    f.write(write_str)
-    f.close()
-print("Tags generated, count", total_tags.__len__())
+    if not os.path.exists(tag_dir):
+        os.makedirs(tag_dir)
+
+    for tag in total_tags:
+        tag_filename = tag_dir + tag + '.md'
+        f = open(tag_filename, 'a')
+        write_str = '---\nlayout: tag\ntitle: \"Tag: ' + tag + '\"\ntag: ' + tag + '\nlang: ' + lang[:-1] + '\nrobots: noindex\n---\n'
+        f.write(write_str)
+        f.close()
+    print("Tags generated, count", total_tags.__len__())

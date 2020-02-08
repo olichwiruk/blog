@@ -1,32 +1,33 @@
 ---
 layout: default
 ---
-
 <div class="posts">
   {% for post in site.posts %}
-    <article class="post">
-      <div class="header">
-        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    {% if post.lang == page.lang %}
+      <article class="post">
+        <div class="header">
+          <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-        <div>
-          <div class="date">{{ post.date | date: "%e.%m.%Y" }}</div>
-          {% include tags.html %}
+          <div>
+            <div class="date">{{ post.date | date: "%e.%m.%Y" }}</div>
+            {% include tags.html %}
+          </div>
+
+          {% if post.photo %}
+            <div class="photo">
+              <img src={% if post.photo contains 'http' %}{{post.photo}}
+                {% else %}{{site.baseurl}}/{{post.photo}}{% endif %}
+                ></img>
+            </div>
+          {% endif %}
         </div>
 
-        {% if post.photo %}
-          <div class="photo">
-            <img src={% if post.photo contains 'http' %}{{post.photo}}
-              {% else %}{{site.baseurl}}/{{post.photo}}{% endif %}
-              ></img>
-          </div>
-        {% endif %}
-      </div>
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">{{ site.data.translations.readMore[page.lang] }}</a>
+      </article>
+    {% endif %}
   {% endfor %}
 </div>
