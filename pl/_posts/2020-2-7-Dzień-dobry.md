@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Dzień dobry!
+public: true
 tags: test pl
 lang: pl
 ---

@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="posts">
   {% for post in site.posts %}
-    {% if post.lang == page.lang %}
+    {% if (post.lang == page.lang) and (post.public) %}
       <article class="post">
         <div class="header">
           <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
