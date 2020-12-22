@@ -92,8 +92,8 @@ defaults:
      scope:
          path: ""
      values:
-         lang: pl
-         base-url: "/pl/"
+         lang: en
+         base-url: "/"
     -
      scope:
          path: pl
