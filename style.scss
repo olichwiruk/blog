@@ -244,17 +244,17 @@ nav {
 // .main
 //
 
-.posts > .post {
+.posts > .post-el {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
 }
 
-.posts > .post:last-child {
+.posts > .post-el:last-child {
   padding-bottom: 1em;
   border-bottom: none;
 }
 
-.post {
+.post-el {
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;
@@ -301,12 +301,62 @@ nav {
   .header {
     h1 {
       margin-bottom: 0;
+      line-height: 1.3;
     }
 
     .date {
       font-size: 16px;
       font-style: none;
       display: inline-block;
+    }
+  }
+}
+
+.post {
+  blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid $gray;
+    padding: 0.1em 1em;
+    color: $gray;
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  .entry {
+    line-height: 1.6;
+  }
+
+  .comments {
+    margin-top: 100px;
+  }
+
+  .tag {
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+
+    &:hover {
+      font-weight: 400;
+    }
+  }
+
+  .header {
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .tag-list {
+      text-align: right;
+    }
+
+    .date {
+      font-size: 16px;
+      font-style: none;
+      text-align: center;
     }
   }
 }

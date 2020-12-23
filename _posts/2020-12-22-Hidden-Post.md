@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hidden
+title: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a neque nisi.
 lang: en
 public: false
 tags: test
