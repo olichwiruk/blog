@@ -11,7 +11,10 @@ layout: default
         <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
         <div>
-          <div class="date">{{ post.date | date: "%e.%m.%Y" }}</div>
+          <div class="date">
+            {{ post.date | date: "%e.%m.%Y" }}
+            {% if post.tags.size > 0 %} | {% endif %}
+          </div>
           {% include tags.html %}
         </div>
 
