@@ -6,9 +6,9 @@
 name: olichwiruk
 
 # Short bio or description (displayed in the header)
-description:
-    en: FullStack Web Developer from Krakow
-    pl: FullStack Web Developer from Krakow
+# description:
+#     en: FullStack Web Developer from Krakow
+#     pl: FullStack Web Developer from Krakow
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars.githubusercontent.com/olichwiruk
