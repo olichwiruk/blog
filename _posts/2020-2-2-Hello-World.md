@@ -2,7 +2,7 @@
 layout: post
 title: Hello world!
 lang: en
-public: true
+public: false
 tags: test
 ---
 
